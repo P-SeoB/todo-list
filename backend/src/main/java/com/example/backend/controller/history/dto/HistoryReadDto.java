@@ -1,11 +1,11 @@
-package com.example.backend.controller.history;
+package com.example.backend.controller.history.dto;
 
 import com.example.backend.domain.card.CardType;
 import com.example.backend.domain.history.Action;
 
 import java.time.LocalDateTime;
 
-public class HistoryRead {
+public class HistoryReadDto {
     private Long id;
     private String content;
     private LocalDateTime createdAt;
@@ -15,7 +15,7 @@ public class HistoryRead {
     private String author;
     private CardType cardType;
 
-    public HistoryRead(Long id, String content, LocalDateTime createdAt, String action, Long memberId, Long cardId, String author, String cardType) {
+    public HistoryReadDto(Long id, String content, LocalDateTime createdAt, String action, Long memberId, Long cardId, String author, String cardType) {
         this.id = id;
         this.content = content;
         this.createdAt = createdAt;

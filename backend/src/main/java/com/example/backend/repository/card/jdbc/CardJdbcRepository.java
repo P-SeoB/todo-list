@@ -79,7 +79,7 @@ public class CardJdbcRepository implements CardRepository {
 
     @Override
     public Card update(Card card) {
-        String query = "update todo_list.card set title=:title, content=:content, last_modified_at=:lastModifiedAt where id=:id";
+        String query = "update card set title=:title, content=:content, last_modified_at=:lastModifiedAt where id=:id";
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
                 .addValue("id", card.getId())
                 .addValue("title", card.getTitle())
@@ -92,7 +92,7 @@ public class CardJdbcRepository implements CardRepository {
     @Override
     public void delete(Long id) {
         SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("id", id);
-        String query = "update todo_list.card set visible=false where id=:id";
+        String query = "update card set visible=false where id=:id";
         jdbcTemplate.update(query, namedParameters);
     }
 }

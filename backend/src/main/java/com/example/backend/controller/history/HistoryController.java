@@ -1,7 +1,10 @@
 package com.example.backend.controller.history;
 
 import com.example.backend.controller.ApiResult;
+import com.example.backend.controller.history.dto.HistoryResponse;
+import com.example.backend.controller.history.dto.HistorySaveRequest;
 import com.example.backend.domain.history.History;
+import com.example.backend.service.history.HistoryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +21,7 @@ public class HistoryController {
         this.historyService = historyService;
     }
 
-    @PostMapping("")
+    @PostMapping
     public ApiResult<History> saveHistory(@RequestBody HistorySaveRequest request) {
         return OK(historyService.saveHistory(request));
     }
